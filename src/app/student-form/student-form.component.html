@@ -1,0 +1,225 @@
+<app-staff-dashboard>
+<!-- <button mat-raised-button (click)="isOptional = !isOptional">
+  {{!isOptional ? 'Enable optional steps' : 'Disable optional steps'}}
+</button> -->
+
+<mat-horizontal-stepper linear #stepper >
+  <mat-step [stepControl]="studentForm">
+   
+    <form [formGroup]="studentForm" class=" dashboard-summery-one" #formone="ngForm"  >
+      <ng-template matStepLabel>Student's Details</ng-template>
+     
+     <div class="row">
+       <div class="col-md-4">
+      <mat-form-field class="mat" appearance="outline">
+        <!-- <mat-label>First Name</mat-label> -->
+      <input formControlName="firstName" matInput placeholder="First Name">
+      <span ><i class="fa-fa-user"></i></span>
+      <mat-error *ngIf="hasError('firstName', 'pattern')">please enter characters only</mat-error>
+      <mat-error *ngIf="hasError('firstName', 'maxLength')">Not more than 20 characters</mat-error>
+      <mat-error *ngIf="hasError('firstName', 'required')">This field is required</mat-error>
+      </mat-form-field>
+    </div>
+ 
+    <div class="col-md-4">
+      <mat-form-field class="mat" appearance="outline">
+        <!-- <mat-label>Last Name</mat-label> -->
+        <input formControlName="lastName" matInput placeholder="Last Name">
+        <mat-error *ngIf="hasError('lastName', 'pattern')">please enter characters only</mat-error>
+      <mat-error *ngIf="hasError('lastName', 'required')">This field is required</mat-error>
+      <mat-error *ngIf="hasError('lastName', 'maxLength')">Not more than 20 characters</mat-error>
+      </mat-form-field>
+   
+    </div>
+     
+    <div class="col-md-4">
+       <span>Gender</span><br>
+       
+              <mat-radio-group formControlName="gender" >
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+               
+              </mat-radio-group>
+            </div>
+     </div>
+     <div class="row">
+     <div class="col-md-4">
+              <mat-form-field class="mat" appearance="outline">
+                <!-- <mat-label>Date of Birth</mat-label> -->
+                <input matInput formControlName="dateOfBirth"
+                
+                  [matDatepicker]="minmaxvalidation" 
+                  placeholder="Date of Birth">
+                <mat-datepicker-toggle matSuffix [for]="minmaxvalidation">
+                   </mat-datepicker-toggle>
+                <mat-datepicker #minmaxvalidation></mat-datepicker>
+                <mat-error *ngIf="hasError('dateOfBirth', 'required')">This field is required</mat-error>
+              </mat-form-field>
+      </div>
+     
+      <div class="col-md-4">
+          <mat-form-field class="mat" appearance="outline">
+            <!-- <mat-label>Class</mat-label> -->
+            <mat-select formControlName="classes" name="class" placeholder="Class">
+              <mat-option *ngFor="let class of Classes" [value]="class.viewClass">
+                {{class.viewClass}} 
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hasError('classes', 'required')">This field is required</mat-error>
+          </mat-form-field>
+</div>
+<div class="col-md-4">
+      <mat-form-field class="mat" appearance="outline">
+        <!-- <mat-label>Section</mat-label> -->
+        <mat-select formControlName="section" name="section" placeholder="Section">
+          <mat-option *ngFor="let section of sections" [value]="section.viewValue">
+            {{section.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('section', 'required')">This field is required</mat-error>
+      </mat-form-field>
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field class="mat" appearance="outline">
+          <!-- <mat-label>Email</mat-label> -->
+          <input formControlName="email" matInput placeholder="Email">
+        <mat-error *ngIf="hasError('email', 'pattern')">please enter Valid Phone Number</mat-error>
+       
+      </mat-form-field>
+     
+    </div>
+
+    <div class="col-md-4">
+        <mat-form-field class="mat" appearance="outline">
+          <mat-label>Blood Group</mat-label>
+          <mat-select formControlName="bloodGroup" name="bloodGroup">
+            <mat-option *ngFor="let bg of blood" [value]="bg.viewValue">
+              {{bg.viewValue}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="hasError('bloodGroup', 'required')">This field is required</mat-error> -->
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+          <mat-form-field class="mat" appearance="outline">
+            <!-- <mat-label>Phone Number</mat-label> -->
+            <span matPrefix>+91 &nbsp;</span>
+            <input type="number" matInput placeholder="Telephone" digitOnly formControlName="phoneNumber">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+            <mat-error *ngIf="hasError('phoneNumber', 'pattern')">please enter valid number</mat-error>
+     
+          </mat-form-field>
+       </div>
+</div>
+ 
+        
+          
+        <mat-form-field class="mat" appearance="outline">
+          <!-- <mat-label>Address</mat-label> -->
+          <textarea formControlName="address" matInput placeholder="Address"></textarea>
+          <mat-error *ngIf="hasError('address', 'required')">This field is required</mat-error>
+        </mat-form-field>
+       
+      <div>
+        <button mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+        <!-- <button mat-raised-button color="primary" type="submit"(click)="createRegister()">Submit</button> -->
+      </div>
+    </form>
+ 
+  </mat-step>
+  <mat-step [stepControl]="parentsForm">
+    <div class="d-flex justify-content-center">
+    <form [formGroup]="parentsForm" class=" dashboard-summery-one" #formtwo="ngForm"  >
+      <ng-template matStepLabel>Parent's Details</ng-template>
+      
+      <div class="row">
+        <div class="col-md-4">
+      <mat-form-field class="mat" appearance="outline">
+        <input formControlName="fatherFullName" matInput placeholder="First Name">
+        <mat-error *ngIf="hasError1('fatherFullName', 'pattern')">please enter characters only</mat-error>
+        <mat-error *ngIf="hasError1('fatherFullName', 'maxLength')">Not more than 20 characters</mat-error>
+        <mat-error *ngIf="hasError1('fatherFullName', 'required')">This field is required</mat-error>
+        
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-4">
+        <mat-form-field class="mat" appearance="outline">
+          <input formControlName="motherFullName" matInput placeholder="Last Name">
+          <mat-error *ngIf="hasError1('motherFullName', 'pattern')">please enter characters only</mat-error>
+        <mat-error *ngIf="hasError1('motherFullName', 'required')">This field is required</mat-error>
+        <mat-error *ngIf="hasError1('motherFullName', 'maxLength')">Not more than 20 characters</mat-error>
+        </mat-form-field>
+     </div>
+    
+
+      
+        <div class="col-md-4">
+    
+        <mat-form-field class="mat" appearance="outline">
+          <input formControlName="fatherOccupation" matInput placeholder="Father's Occupation">
+          <mat-error *ngIf="hasError1('fatherOccupation', 'pattern')">please enter characters only</mat-error>
+        <mat-error *ngIf="hasError1('fatherOccupation', 'required')">This field is required</mat-error>
+        <mat-error *ngIf="hasError1('fatherOccupation', 'maxLength')">Not more than 20 characters</mat-error>
+        </mat-form-field>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+        <mat-form-field class="mat" appearance="outline">
+          <input formControlName="motherOccupation" matInput placeholder="Mother's Occupation">
+          <mat-error *ngIf="hasError1('motherOccupation', 'pattern')">please enter characters only</mat-error>
+        <mat-error *ngIf="hasError1('motherOccupation', 'required')">This field is required</mat-error>
+        <mat-error *ngIf="hasError1('motherOccupation', 'maxLength')">Not more than 20 characters</mat-error>
+        </mat-form-field>
+</div>
+
+<div class="col-md-4">
+        <mat-form-field class="mat" appearance="outline">
+          <input formControlName="contactNum" matInput placeholder="Phone nummber">
+          <mat-error *ngIf="hasError1('contactNum', 'pattern')">please enter numbers only</mat-error>
+        <mat-error *ngIf="hasError1('contactNum', 'required')">This field is required</mat-error>
+        <!-- <mat-error *ngIf="hasError1('mOcc', 'maxLength')">Not more than 20 characters</mat-error> -->
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="mat" appearance="outline">
+          <input formControlName="pemail" matInput placeholder="Email">
+        <mat-error *ngIf="hasError1('pemail', 'pattern')">please enter Valid Phone Number</mat-error>
+       
+      </mat-form-field>
+     
+    </div>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext >Next</button>
+        <!-- <button mat-raised-button color="primary" type="submit"(click)="createRegister1()">Submit</button> -->
+      </div>
+    </form>
+    </div>
+  </mat-step>
+ 
+    <mat-step>
+      <div class="d-flex justify-content-center">
+      <ng-template matStepLabel>Done</ng-template></div>
+      <!-- <form  (ngSubmit)="createRegister()" [formGroup]="formJoin"> -->
+      
+  
+  
+      <div class="d-flex justify-content-center">
+      <button mat-raised-button color="primary"matStepperPrevious>Back</button>
+      <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+      <button mat-raised-button  color="primary" type="submit" (click)="createRegister()"> Submit </button>
+      <!-- <button mat-raised-button  color="primary" (click)="Register()"> Submit </button> -->
+
+       
+    </div>
+  <!-- </form> -->
+  </mat-step>
+
+</mat-horizontal-stepper>
+</app-staff-dashboard>

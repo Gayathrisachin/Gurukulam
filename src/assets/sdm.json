@@ -1,0 +1,181 @@
+{
+  "sdm": [
+    {
+      "id": 1,
+      "firstname": "admin",
+      "lastname": "admin",
+      "email": "admin@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstname": "admin",
+      "lastname": "admin",
+      "email": "admin@gmail.com"
+    },
+    {
+      "formArray": [
+        {
+          "firstname": "sdf",
+          "lastname": "dfg"
+        },
+        {
+          "email": "sdfg@dfg.sdfg"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "formArray": [
+        {
+          "firstname": "gayatri",
+          "lastname": "s"
+        },
+        {
+          "email": "sdf@df.sdf"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "formArray": [
+        {
+          "firstName": "sedrftg",
+          "lastName": "rfgh",
+          "gender": "female",
+          "dateOfBirth": "2020-02-27T00:00:00.000Z",
+          "classes": 1,
+          "section": "A",
+          "bloodGroup": "O+",
+          "address": "ertg",
+          "phoneNumber": 8765567486,
+          "email": "dfg@df.dfg"
+        },
+        {
+          "fatherFullName": "dfghj",
+          "motherFullName": "dfg",
+          "fatherOccupation": "dfg",
+          "motherOccupation": "dfgh",
+          "contactNum": "8751457452",
+          "pemail": "dfg@fg.sdf"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "formArray": [
+        {
+          "firstName": "fghj",
+          "lastName": "dfghj",
+          "gender": "female",
+          "dateOfBirth": "2020-02-15T00:00:00.000Z",
+          "classes": 1,
+          "section": "A",
+          "bloodGroup": "",
+          "address": "fgh",
+          "phoneNumber": 9876567887,
+          "email": ""
+        },
+        {
+          "fatherFullName": "ghjk",
+          "motherFullName": "dfgh",
+          "fatherOccupation": "dfgh",
+          "motherOccupation": "fghnm",
+          "contactNum": "8765467655",
+          "pemail": "sdfg@sdfg.fgh"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "formArray": [
+        {
+          "firstName": "dfgg",
+          "lastName": "fghj",
+          "gender": "female",
+          "dateOfBirth": "2020-02-29T00:00:00.000Z",
+          "classes": 1,
+          "section": "A",
+          "bloodGroup": "",
+          "address": "vbn",
+          "phoneNumber": 9876546766,
+          "email": ""
+        },
+        {
+          "fatherFullName": "dfgh",
+          "motherFullName": "dfgh",
+          "fatherOccupation": "dfgh",
+          "motherOccupation": "dfg",
+          "contactNum": "9875467565",
+          "pemail": "dfgh@asdf.df"
+        }
+      ],
+      "id": 7
+    },
+    [
+      {
+        "firstName": "gayatri",
+        "lastName": "d",
+        "gender": "female",
+        "dateOfBirth": "2020-02-23T00:00:00.000Z",
+        "classes": 1,
+        "section": "A",
+        "bloodGroup": "",
+        "address": "dfgh",
+        "phoneNumber": 8754464566,
+        "email": ""
+      },
+      {
+        "fatherFullName": "dfghj",
+        "motherFullName": "dfghj",
+        "fatherOccupation": "dfghj",
+        "motherOccupation": "dfgh",
+        "contactNum": "8535465454",
+        "pemail": "dfgh@fg.df"
+      }
+    ],
+    {
+      "firstName": "",
+      "lastName": "",
+      "gender": "",
+      "dateOfBirth": "\"2020-02-18\"",
+      "classes": "",
+      "section": "",
+      "bloodGroup": "",
+      "address": "",
+      "phoneNumber": "",
+      "email": "",
+      "fatherFullName": "",
+      "motherFullName": "",
+      "fatherOccupation": "",
+      "motherOccupation": "",
+      "contactNum": "",
+      "pemail": "",
+      "id": 9
+    },
+    {
+      "formArray": [
+        {
+          "firstName": "dfghjkllll",
+          "lastName": "cvb",
+          "gender": "female",
+          "dateOfBirth": "2020-02-23T00:00:00.000Z",
+          "classes": 1,
+          "section": "A",
+          "bloodGroup": "",
+          "address": "sdfgh",
+          "phoneNumber": "8521245211",
+          "email": ""
+        },
+        {
+          "fatherFullName": "sdfghjk",
+          "motherFullName": "sdfgh",
+          "fatherOccupation": "asdf",
+          "motherOccupation": "sdfgh",
+          "contactNum": "8551544144",
+          "pemail": "sdfg@fghj.dfg"
+        }
+      ],
+      "id": 10
+    }
+  ]
+}

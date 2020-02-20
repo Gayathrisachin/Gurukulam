@@ -1,0 +1,18 @@
+.register-form {
+  margin: 25px 0;
+}
+
+.example-card {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 15px !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.register {
+  text-align: right;
+  margin: 0 !important;
+}

@@ -1,0 +1,86 @@
+<!-- <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar  class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Responsive App</h1>
+    </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    
+    <mat-sidenav #snav  [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+  
+      <mat-nav-list style="color:white" >
+        <mat-list-item class="parent" routerLinkActive="Active" routerLink="/student-form">
+          Student Admission
+            </mat-list-item> 
+         
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      
+      <ng-content></ng-content>
+  
+   
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->
+
+
+<mat-sidenav-container class="sidenav-container">
+ 
+  <mat-sidenav #drawer class="sidenav mat-drawer-side" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="top-bar" style="position: relative;" ><img src="/assets/img/gurukulam.jpg" width="50" height="50">
+  <span style="margin-left: 25px;">Gurukulam</span>
+    
+    </mat-toolbar> 
+    <mat-nav-list style="color:white" >
+      <!-- <mat-list-item class="parent" routerLinkActive="Active" routerLink="/student-form">
+        Student Admission
+          </mat-list-item> -->
+          <mat-list-item class="parent" routerLinkActive="Active" routerLink="/sdm">
+            Student Admission
+              </mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" routerLinkActive="Active" routerLink="/teacher">
+              <span class="full-width" *ngIf="isExpanded || 
+                  isShowing"></span>
+             Teacher
+              <mat-icon class="menu-button" [ngClass]="{'rotated' : 
+                showSubmenu}" *ngIf="isExpanded || 
+                   isShowing">expand_more</mat-icon>
+              </mat-list-item>
+      <p *ngIf="showSubmenu" class="showmenu" >
+        <a mat-list-item routerLinkActive="Active" routerLink="/std-marks">Student Marks</a>
+      </p>
+       <div *ngIf="showSubmenu" class="showmenu">
+        <a mat-list-item routerLinkActive="Active" routerLink="/std-attendance">Attendance</a>
+      </div>
+      <div *ngIf="showSubmenu" class="showmenu">
+        <a mat-list-item routerLinkActive="Active" routerLink="/std-performance">Student Performance</a>
+        </div>
+        <div *ngIf="showSubmenu" class="showmenu">
+          <a mat-list-item routerLinkActive="Active" routerLink="/select-try">Select</a>
+          </div>
+      </mat-nav-list>
+  </mat-sidenav>
+ 
+  <mat-sidenav-content>
+    <mat-toolbar class="top-bar">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <p>Welcome to Gurukulam</p>
+      
+      </mat-toolbar>
+ 
+    <ng-content></ng-content>
+<!-- <app-dashboard></app-dashboard> -->
+ 
+  </mat-sidenav-content>
+</mat-sidenav-container>

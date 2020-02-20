@@ -1,0 +1,26 @@
+<h1 mat-dialog-title color="warn">Login</h1>
+<div mat-dialog-content>
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <mat-form-field class="full-width">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="User Name" name="pName" formControlName="userName" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Password" formControlName="password" name="Password" required>
+    </mat-form-field>
+   
+     
+      <button mat-raised-button color="warn" style="margin-left: 20px;" [disabled]="!loginForm.valid">Login</button>
+      <!-- <button mat-raised-button color="warn" style="margin-left: 20px;" (click)="userRegister()" >Register</button> -->
+      <button mat-raised-button color="warn"  (click)="hideModel()">Cancel</button>
+    
+    <!-- <mat-card-actions class="register">
+      <button mat-raised-button color="warn"  (click)="hideModel()">Cancel</button>
+    </mat-card-actions> -->
+  </form>
+  
+</div>
+
+

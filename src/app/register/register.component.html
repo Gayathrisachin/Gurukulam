@@ -1,0 +1,95 @@
+<div class="register-form">
+    <mat-card class="example-card">
+      <div style="width: 100%;text-align: center;">
+        <h3>Register Form</h3>
+      </div>
+      <mat-card-content style="margin: 0 !important;">
+        <form [formGroup]="registerForm" (ngSubmit)="createRegister(registerForm.value)">
+  
+          <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" name="fName" required formControlName="firstName">
+            <mat-error *ngFor="let validation of errorMessages.firstName">
+              <mat-error class="error-message" *ngIf="registerForm.get('firstName').hasError(validation.type) && (registerForm.get('firstName').dirty ||
+                registerForm.get('firstName').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" name="lName" required formControlName="lastName">
+            <mat-error *ngFor="let validation of errorMessages.lastName">
+              <mat-error class="error-message" *ngIf="registerForm.get('lastName').hasError(validation.type) && (registerForm.get('lastName').dirty ||
+                registerForm.get('lastName').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width" class="full-width">
+            <input type="password" matInput placeholder="Enter your password" formControlName="password">
+            <mat-error *ngIf="registerForm.get('password').hasError('minlength')">Password must have at least 8
+              characters</mat-error>
+            <!-- <mat-error *ngIf="registerForm.controls['password'].required">Password is required</mat-error> -->
+          </mat-form-field>
+  
+         <mat-form-field class="full-width" *ngIf="registerForm.controls['password'].valid">
+            <input type="password" matInput placeholder="Confirm your password" formControlName="confirmPassword">
+            <mat-error
+              *ngIf="registerForm.controls['confirmPassword'].pristine || registerForm.controls['confirmPassword'].errors?.MatchPassword">
+              Password does not match</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Roles</mat-label>
+            <mat-select formControlName="role">
+              <mat-option *ngFor="let role of roles" [value]="role.value">
+                {{role.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngFor="let validation of errorMessages.role">
+              <mat-error class="error-message" *ngIf="registerForm.get('role').hasError(validation.type) && (registerForm.get('role').dirty ||
+                registerForm.get('role').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" name="email" placeholder="Email" formControlName="email" required
+              formControlName="email">
+            <mat-error *ngFor="let validation of errorMessages.email">
+              <mat-error class="error-message"
+                *ngIf="registerForm.get('email').hasError(validation.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Phone Number</mat-label>
+            <input type="number" matInput placeholder="Phone Number" name="number" required formControlName="phone">
+            <mat-error *ngFor="let validation of errorMessages.phone">
+              <mat-error class="error-message"
+                *ngIf="registerForm.get('phone').hasError(validation.type) && (registerForm.get('phone').dirty || registerForm.get('phone').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="Address" name="address" required formControlName="address"></textarea>
+            <mat-error *ngFor="let validation of errorMessages.address">
+              <mat-error class="error-message"
+                *ngIf="registerForm.get('address').hasError(validation.type) && (registerForm.get('address').dirty || registerForm.get('address').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-card-actions class="register">
+            <button type="submit" mat-raised-button color="primary" [disabled]="!registerForm.valid">REGISTER</button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

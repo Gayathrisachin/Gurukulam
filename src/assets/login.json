@@ -1,0 +1,100 @@
+{
+  "loginUsers": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "email": "teacher@gmail.com",
+      "password": "teacher"
+    },
+    {
+      "firstName": "gayatri",
+      "lastName": "s",
+      "username": "gayatri",
+      "password": "gayatri",
+      "id": 3
+    },
+    {
+      "firstName": "gayatri",
+      "lastName": "s",
+      "username": "gayatri",
+      "password": "gayatri",
+      "id": 4
+    },
+    {
+      "username": "gayatri",
+      "password": "gayatri",
+      "id": 5
+    },
+    {
+      "username": "gaya",
+      "password": "ga",
+      "id": 6
+    },
+    {
+      "username": "gay",
+      "password": "ga",
+      "id": 7
+    },
+    {
+      "firstName": "reshma",
+      "lastName": "m",
+      "username": "reshma",
+      "password": "reshmah",
+      "id": 8
+    },
+    {
+      "username": "reshma",
+      "password": "reshmah",
+      "id": 9
+    },
+    {
+      "username": "reshma",
+      "password": "reshma",
+      "id": 10
+    },
+    {
+      "username": "sdf",
+      "password": "dfgb",
+      "id": 11
+    },
+    {
+      "firstName": "Archana",
+      "lastName": "k",
+      "username": "archana",
+      "password": "archanak",
+      "id": 12
+    },
+    {
+      "firstName": "Archna",
+      "lastName": "k",
+      "username": "archana",
+      "password": "archana",
+      "id": 13
+    },
+    {
+      "firstName": "gayatrii",
+      "lastName": "s",
+      "username": "gayatri",
+      "password": "gayatri",
+      "id": 14
+    },
+    {
+      "firstName": "archanaa",
+      "lastName": "k",
+      "username": "archanak",
+      "password": "archana",
+      "id": 15
+    },
+    {
+      "firstName": "gayatris",
+      "lastName": "s",
+      "username": "gayatriii",
+      "password": "gayatri",
+      "id": 16
+    }
+  ]
+}
